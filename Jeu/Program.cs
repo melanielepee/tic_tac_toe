@@ -11,24 +11,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jeu
+namespace Tic_tac_toe
 {
     class Program
     {
+        static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        static int Joueur1
         static void Main(string[] args)
         {
-            Console.WriteLine("Indique ton nom :)");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
+            Console.WriteLine("     |     |      ");
+
             Console.ReadLine();
-            Console.WriteLine("Tu vas plutôt t'appeler Batiste ! Je préfère..");
-            Console.WriteLine("");
-            Console.WriteLine("\t\t\t\t--------------------");
-            Console.WriteLine("\t\t\t\t¦      ¦     ¦     ¦");
-            Console.WriteLine("\t\t\t\t--------------------");
-            Console.WriteLine("\t\t\t\t¦      ¦     ¦     ¦");
-            Console.WriteLine("\t\t\t\t--------------------");
-            Console.WriteLine("\t\t\t\t¦      ¦     ¦     ¦");
-            Console.WriteLine("\t\t\t\t--------------------");
-            Console.Read();
         }
     }
 }

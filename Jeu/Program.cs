@@ -13,81 +13,82 @@ namespace TicTacToe_test_
             string strO;
             string strSaisie;
             string strChoix = "";
+            int iPointX = 0;
+            int iPointO= 0 ;
 
+            Console.WriteLine("     ***************************************");
+            Thread.Sleep(200);
+            Console.WriteLine("     *                                     *");
+            Thread.Sleep(200);
+            Console.WriteLine("     *                                     *");
+            Thread.Sleep(200);
+            Console.WriteLine("     *             TIC TAC TOE             *");
+            Thread.Sleep(200);
+            Console.WriteLine("     *                                     *");
+            Thread.Sleep(200);
+            Console.WriteLine("     *                                     *");
+            Thread.Sleep(200);
+            Console.WriteLine("     ***************************************");
+            Thread.Sleep(200);
+            Console.WriteLine("\n");
+            Console.WriteLine("  ,     ,");
+            Thread.Sleep(200);
+            Console.WriteLine(" (____ /)                                    Petit rappelle pour les règles:");
+            Thread.Sleep(200);
+            Console.WriteLine("  (_oo_)                     Le but du jeu est d'aligner les symboles sélectionnés pour gagner !");
+            Thread.Sleep(200);
+            Console.WriteLine("     (O)");
+            Thread.Sleep(200);
+            Console.WriteLine("   __|| __    )");
+            Thread.Sleep(200);
+            Console.WriteLine("[]/ ______[] /");
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
 
+            Console.Write("Saisie ton nom (tu prendras les X et tu commenceras): ");
+            strSaisie = Console.ReadLine();
+            strX = strSaisie;
 
-            //  Console.WriteLine("     ***************************************");
-            //  Thread.Sleep(200);
-            //   Console.WriteLine("     *                                     *");
-            //   Thread.Sleep(200);
-            //   Console.WriteLine("     *             TIC TAC TOE             *");
-            //  Thread.Sleep(200);
-            //   Console.WriteLine("     *                                     *");
-            //   Thread.Sleep(200);
-            //   Console.WriteLine("     ***************************************");
-            //  Thread.Sleep(200);
-            //  Console.WriteLine("                 Multijoueurs");
-            // Console.WriteLine("                VS the MACHINE");
+            Console.Write("Saisie ton nom (tu prendras les O et tu seras deuxième): ");
+            strSaisie = Console.ReadLine();
+            strO = strSaisie;
 
+            //Par défaut il y a le 0 même si on ne l'utilise pas à ne pas prendre en compte.
+            //Mais si on souhaite le changer enlever le 9 et mettre -1
+            char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            if (strChoix == "oui")
+            {
+                Console.Clear();
+            }
+            int player = 1;
+            int choice;
+            int flag = 0;
             do
             {
-                Console.WriteLine("     ***************************************");
-                Thread.Sleep(200);
-                Console.WriteLine("     *                                     *");
-                Thread.Sleep(200);
-                Console.WriteLine("     *                                     *");
-                Thread.Sleep(200);
-                Console.WriteLine("     *             TIC TAC TOE             *");
-                Thread.Sleep(200);
-                Console.WriteLine("     *                                     *");
-                Thread.Sleep(200);
-                Console.WriteLine("     *                                     *");
-                Thread.Sleep(200);
-                Console.WriteLine("     ***************************************");
-                Thread.Sleep(200);
-                Console.WriteLine("\n");
-                Console.WriteLine("  ,     ,");
-                Thread.Sleep(200);
-                Console.WriteLine(" (____ /)                                    Petit rappelle pour les règles:");
-                Thread.Sleep(200);
-                Console.WriteLine("  (_oo_)                     Le but du jeu est d'aligner les symboles sélectionnés pour gagner !");
-                Thread.Sleep(200);
-                Console.WriteLine("     (O)");
-                Thread.Sleep(200);
-                Console.WriteLine("   __|| __    )");
-                Thread.Sleep(200);
-                Console.WriteLine("[]/ ______[] /");
-                Console.WriteLine("\n");
-                Console.WriteLine("\n");
-
-                Console.Write("Saisie ton nom (tu prendras les X et tu commenceras): ");
-                strSaisie = Console.ReadLine();
-                strX = strSaisie;
-
-                Console.Write("Saisie ton nom (tu prendras les O et tu seras deuxième): ");
-                strSaisie = Console.ReadLine();
-                strO = strSaisie;
-
-
-
-                //Par défaut il y a le 0 même si on ne l'utilise pas à ne pas prendre en compte.
-                //Mais si on souhaite le changer enlever le 9 et mettre -1
-                char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                int player = 1;
-                int choice;
-                int flag = 0;
                 do
                 {
+                    if (flag == 1 && player == 1)
+                    {
+                        iPointX++;
+                    }
+                    if (flag == 1 && player == 2)
+                    {
+                        iPointO ++;
+                    }
                     Console.Clear();
                     Console.WriteLine("     ***************************************");
                     Console.WriteLine("     *                                     *");
+                    Console.WriteLine("     *                                     *");
                     Console.WriteLine("     *             TIC TAC TOE             *");
+                    Console.WriteLine("     *                                     *");
                     Console.WriteLine("     *                                     *");
                     Console.WriteLine("     ***************************************");
                     Console.WriteLine("\n");
-                    Console.WriteLine("{0} joue avec le X et {1} joue avec le O (pour rappelle ^^)", strX, strO);
+                    Console.WriteLine("                                                                                    ****************");
+                    Console.WriteLine("{0} joue avec le X et {1} joue avec le O (pour rappelle ^^)                         *  {2}  *  {3} *", strX, strO, iPointX, iPointO);
+                    Console.WriteLine("                                                                                    ****************");                                                           
                     Console.WriteLine("\n");
-
+                   
                     if (player % 2 == 0)// tour
                     {
                         Console.WriteLine("Tour de : {0}", strO);
@@ -143,18 +144,17 @@ namespace TicTacToe_test_
                     Console.WriteLine("                                                    __|| __    )");
                     Thread.Sleep(200);
                     Console.WriteLine("                                                 []/ ______[] /");
-                    Console.WriteLine("Veux-tu continuer ?(si tu ne veux pas écrit 'exit'): ");
+                    Console.WriteLine("Veux-tu continuer ?(oui/non): ");
                     strChoix = Console.ReadLine();
                 }
                 else
                 {
                     Console.WriteLine("draw");
                 }
-
-                //Voir si le joueur gagne ou pas 
-            } while (strChoix == "exit");
+  
+            } while (strChoix == "oui");
         }
-
+        //Voir si le joueur gagne ou pas 
         static void Board(char[] arr)
         {
             Console.WriteLine("     |     |      ");
@@ -227,3 +227,5 @@ namespace TicTacToe_test_
 
     }
 }
+
+

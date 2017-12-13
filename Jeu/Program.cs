@@ -55,16 +55,13 @@ namespace TicTacToe_test_
 
             //Par défaut il y a le 0 même si on ne l'utilise pas à ne pas prendre en compte.
             //Mais si on souhaite le changer enlever le 9 et mettre -1
-            char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-            if (strChoix == "oui")
-            {
-                Console.Clear();
-            }
+            char[] arr;
             int player = 1;
             int choice;
             int flag = 0;
             do
             {
+                arr = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
                 do
                 {
                     if (flag == 1 && player == 1)
@@ -85,7 +82,7 @@ namespace TicTacToe_test_
                     Console.WriteLine("     ***************************************");
                     Console.WriteLine("\n");
                     Console.WriteLine("                                                                                    ****************");
-                    Console.WriteLine("{0} joue avec le X et {1} joue avec le O (pour rappelle ^^)                         *  {2}  *  {3} *", strX, strO, iPointX, iPointO);
+                    Console.WriteLine("{0} joue avec le X et {1} joue avec le O (pour rappelle ^^)                                 *  {2}  *  {3} *", strX, strO, iPointX, iPointO);
                     Console.WriteLine("                                                                                    ****************");                                                           
                     Console.WriteLine("\n");
                    
